@@ -1,31 +1,42 @@
-/*1 Chiedi all’utente la sua email controlla che sia nella lista di chi può accedere e stampa un messaggio appropriato;
-2 Gioco dei dadi, chi fa di più vince. */
 
+/*1 Chiedi all’utente la sua email controlla che sia nella lista di chi può accedere e stampa un messaggio appropriato;*/
 
-//1 Chiedi all’utente la sua email controlla che sia nella lista di chi può accedere e stampa un messaggio appropriato;
-
-//lista utenti ammessi (array)
+//lista utenti ammessi
 var lista = ["utente1@gmail.com", "utente2@hotmail.com", "utente3@miodominio.it"];
 console.log(lista)
 
-//chiedi email
+//richiesta email
 var emailUtente = prompt("Prego inserire indirizzo mail");
 
-//compara
-var result;
-
-for (var i = 0; i < lista.length; i++){
-  if (lista[i] == emailUtente) {
-    result = 1
+//cerca @ nel prompt (validazione)
+var atTrovata;
+for (var a = 0; a < emailUtente.length; a++) {
+  if (emailUtente[a] == "@") {
+    atTrovata = 1;
   }
 }
 
-//risultato
-var msg
-if (result == 1) {
-  msg = "L' indirizzo inserito è in lista, puoi accedere al portale."
+//SE LA @ E' STATA TROVATA
+if (atTrovata == 1) {
+  //compara emailUtente a indirizzi nella lista
+  var result;
+  for (var i = 0; i < lista.length; i++){
+    if (lista[i] == emailUtente) {
+      result = 1;
+    }
+  }
+  //risultato ricerca indirizzo
+  var msg;
+  if (result == 1) {
+    msg = "L' indirizzo inserito è in lista, puoi accedere al portale."
+  } else {
+    msg = "Spiacente, l'indirizzo inserito non è in lista, non puoi accedere al portale."
+  }
+  document.getElementById('result').innerHTML = msg;
+
+//SE LA @ NON E' STATA TROVATA
 } else {
-  msg = "Spiacente, l'indirizzo inserito non è in lista, non puoi accedere al portale."
+  alert("indirizzo errato")
 }
 
-document.getElementById('result').innerHTML = msg;
+//COME SI RICOMINCIA IL TUTTO IL PROCESSO DAL PROMPT??

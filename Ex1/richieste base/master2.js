@@ -7,8 +7,8 @@ console.log(lista)
 var emailUtente = prompt("Prego inserire indirizzo mail");
 
 for (var a = 0; a < emailUtente.length; a++) {
-  if ((emailUtente[a] == "@") && ((emailUtente[a] == ".it") || (mailUtente[a] == ".it") )) {
-    console.log("ok")
+  if ((emailUtente[a] == "@") && ((emailUtente[a] == ".it") || (emailUtente[a] == ".com"))) {
+      console.log("ok")
   }
 }
 
