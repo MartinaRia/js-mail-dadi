@@ -6,12 +6,13 @@
 
 //lista utenti ammessi (array)
 var lista = ["utente1@gmail.com", "utente2@hotmail.com", "utente3@miodominio.it"];
-//
-//Chiedi email
+console.log(lista)
+
+//chiedi email
 var emailUtente = prompt("Prego inserire indirizzo mail");
 
-
-var result
+//compara
+var result;
 
 for (var i = 0; i < lista.length; i++){
   if (lista[i] == emailUtente) {
@@ -19,6 +20,7 @@ for (var i = 0; i < lista.length; i++){
   }
 }
 
+//risultato
 var msg
 if (result == 1) {
   msg = "L' indirizzo inserito è in lista, puoi accedere al portale."
@@ -26,4 +28,4 @@ if (result == 1) {
   msg = "Spiacente, l'indirizzo inserito non è in lista, non puoi accedere al portale."
 }
 
-document.getElementById('result').innerHTML = msg
+document.getElementById('result').innerHTML = msg;
