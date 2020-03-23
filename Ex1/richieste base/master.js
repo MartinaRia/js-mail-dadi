@@ -4,8 +4,6 @@
 
 //1 Chiedi all’utente la sua email controlla che sia nella lista di chi può accedere e stampa un messaggio appropriato;
 
-
-
 //lista utenti ammessi (array)
 var lista = ["utente1@gmail.com", "utente2@hotmail.com", "utente3@miodominio.it"];
 //
@@ -23,9 +21,9 @@ for (var i = 0; i < lista.length; i++){
 
 var msg
 if (result == 1) {
-  msg = "you did it!"
+  msg = "L' indirizzo inserito è in lista, puoi accedere al portale."
 } else {
-  msg = "fuck you"
+  msg = "Spiacente, l'indirizzo inserito non è in lista, non puoi accedere al portale."
 }
 
-console.log(msg)
+document.getElementById('result').innerHTML = msg
